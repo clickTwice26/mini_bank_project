@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block body_content %}
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Transaction ID</th>
+            <th scope="col">User</th>
+            <th scope="col">Incoming</th>
+            <th scope="col">Outgoing</th>
+            <th scope="col">Balance</th>
+            <th scope="col">Date Added</th>
+              <th scope="col">Time Added</th>
+            <th scope="col">Reason</th>
+          </tr>
+        </thead>
+        <tbody>
+{% for i in database %}
+<tr>
+    <th scope="row">{{i.id}}</th>
+    <td>{{i.username}}</td>
+    <td>{{i.come}}{% include "dollarsign.html" %}</td>
+    <td>{{i.gone}}{% include "dollarsign.html" %}</td>
+    <td>{{i.left}}{% include "dollarsign.html" %}</td>
+    <td>{{i.date_added}}</td>
+    <td>{{i.time_added}}</td>
+    <td>{{i.reason}}</td>
+  </tr>
+
+{% endfor %}
+
+        </tbody>
+      </table>
+    </div>    
+{% endblock body_content %}

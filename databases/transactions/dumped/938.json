@@ -1,0 +1,6 @@
+{
+    "transaction_ammount": "123",
+    "transaction_type": "incomming",
+    "transaction_reason": "",
+    "sendparent": "off"
+}

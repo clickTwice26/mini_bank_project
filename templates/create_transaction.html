@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Create Transaction{% endblock title %}
+{% block body_content %}
+{% for message in get_flashed_messages() %}
+<div class="alert alert-info" role="alert">
+{{ message  }}
+
+</div>
+{% endfor %}
+<div class="container">
+
+<form action="/create_transaction" method="post">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"><b><i class="fa-solid fa-bangladeshi-taka-sign"></i> Transaction Amount</b></label>
+        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0.00 Taka" name="transaction_ammount" required>
+      </div>
+      <hr>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"><b><i class="fa-solid fa-table-columns"></i> Type</b></label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="transaction_type" id="flexRadioDefault2" value="incomming" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Incomming
+            </label>
+            
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="transaction_type" value="outgoing" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Outgoing
+            </label>
+            
+          </div>
+      </div>
+      <hr>
+
+      <div class="mb-3">
+        <div class="form-check form-switch"><i class="fa-solid fa-hands-holding-child"></i>
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" name="sendparent">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Send to Parent</label>
+          </div>
+      </div><hr>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"><b><i class="fa-solid fa-comments-dollar"></i> Reason</b></label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="transaction_reason"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary"><i class="fa-regular fa-square-plus"></i> Create</button>
+
+</form>
+
+</div>
+
+{% endblock body_content %}

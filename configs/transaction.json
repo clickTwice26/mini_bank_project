@@ -1,0 +1,8 @@
+{
+    "dump_dir": "/databases/transactions/dumped",
+    "valid_transaction_schema": {
+        "transaction_type": ["incomming", "outgoing"],
+        "sendparent": ["off","on"]
+    
+    }
+}

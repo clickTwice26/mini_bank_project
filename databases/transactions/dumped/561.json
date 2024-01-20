@@ -1,0 +1,6 @@
+{
+    "transaction_ammount": "230",
+    "transaction_type": "outgoing",
+    "transaction_reason": "for testing",
+    "sendparent": "off"
+}

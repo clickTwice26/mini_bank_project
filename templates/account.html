@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}My Account{% endblock title %}
+{% block body_content %}
+<div class="container">
+  {% include "currentbalance.html" %}
+  <hr>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Dashboard</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">All in one Dashboard</h6>
+          <hr>
+          <p class="card-text">Transactions statastics, graph and many more simplified details</p>
+          <a href="{{url_for("dashboard")}}" class="card-link"><button type="button" class="btn btn-secondary">View</button>
+          </a>
+          <a href="/dashboard_manager" class="card-link"><button type="button" class="btn btn-primary">Setting</button>
+          </a>
+        </div>
+      </div>
+    
+      <div class="card my-5" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Transactions</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">My all transactions</h6>
+          <hr>
+          <p class="card-text">Watch all of your transactions history or create a transaction</p>
+          <a href="/transactions" class="card-link"><button type="button" class="btn btn-secondary">History</button>
+          </a>
+          <a href="/create_transaction" class="card-link"><button type="button" class="btn btn-primary">Create</button>
+          </a>
+        </div>
+      </div>
+
+
+</div>
+
+{% endblock body_content %}
